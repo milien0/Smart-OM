@@ -215,7 +215,11 @@ export default function ModelsPage() {
 				</div>
 
 				<button
-					onClick={() => setIsModalOpen(true)}
+					onClick={() => {
+						setSelectedFile(null);
+						setFolderFiles([]);
+						setIsModalOpen(true);
+					}}
 					className='px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-full text-sm font-semibold transition-all shadow-xl shadow-blue-200/80 ring-1 ring-white/20 flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98]'
 				>
 					<ArrowUpTrayIcon className='h-4 w-4' /> Carica Modello 3D
