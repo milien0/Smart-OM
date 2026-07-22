@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/*
+ * Fondamenta del tema (light-only).
+ * Tutte le dashboard sono progettate su sfondo chiaro; il tema scuro è
+ * riservato ai viewer 3D, che impostano il proprio background localmente.
+ */
+:root {
+  --background: #f4f7fc;
+  --foreground: #1f1f1f;
+
+  /* Token di design condivisi da admin/dashboard */
+  --surface: #ffffff;
+  --surface-muted: #f6f8fb;
+  --border: #e4e7ec;
+  --text-muted: #6b7280;
+  --brand: #2563eb;
+  --brand-strong: #4f46e5;
+
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-brand: var(--brand);
+  /* Inter è caricato dal layout ed esposto come --font-inter */
+  --font-sans: var(--font-inter, system-ui, sans-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Niente più override ad Arial: eredita Inter da <html> */
+  font-family: var(--font-inter, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
